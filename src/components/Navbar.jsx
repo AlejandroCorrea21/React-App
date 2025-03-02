@@ -7,14 +7,16 @@ function Navbar() {
     return (
         <>
 
-            <section style={{ position: "fixed", top: 1, right: 0, backgroundColor: "white", textAlign: "right", display: "flex", width: "76vw", alignItems: "center", border: "1px solid black" }}>
-                <img src={lupa} alt="" style={{ position: "fixed", height: 15, width: 20, top: 20, left: 200, paddingLeft: 40 }} />
-
-                <p style={{ fontSize: 15, color: "black", paddingLeft: 50 }}>Search</p>
-                <img src={notification} alt="" style={{ position: "fixed", height: 15, width: 20, top: 20, right: 50 }} />
-                <img src={usuario} alt="" style={{ position: "fixed", height: 15, width: 20, top: 20, right: 20 }} />
-
-            </section>
+            <div style={{ width: "100%", height: 100, marginLeft: "10%", backgroundColor: "purple", display: "flex", justifyContent: "flex-start" }}>
+                <div>
+                    <img src={lupa} alt="" style={{ width: 30, height: 20, marginLeft: "10%", backgroundColor: "purple", display: "flex", justifyContent: "flex-start" }} />
+                    <p style={{}}>Search</p>
+                </div>
+                <div style={{ width: 30, height: 20, display: "flex", justifyContent: "flex-end", }}>
+                    <img src={notification} alt="" />
+                    <img src={usuario} alt="" style={{ width: 30, height: 20 }} />
+                </div>
+            </div >
 
         </>
     )

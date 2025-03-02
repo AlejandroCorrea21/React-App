@@ -3,11 +3,14 @@ import Sidebar from "./components/Sidebar";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 import Cards from "./components/Cards";
+import ProductList from "./ProductList";
+
 function App() {
   return (
     <>
-      <Sidebar />
       <Navbar />
+      <ProductList />
+      <Sidebar />
       <Cards />
       <Body />
       <Footer />
