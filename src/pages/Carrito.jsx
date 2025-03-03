@@ -1,7 +1,12 @@
 import productsDataList from "../ProductList";
 
-function Carrito(){
-    return
+function Carrito(props){
+    // return(
+    //     const clone =[...props.allProducts]
+    //     clone.push
+    // )
+
+    //probando probando
 }
 
 export default Carrito
