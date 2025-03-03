@@ -1,32 +1,39 @@
-import ProductList from "../ProductList";
-import { useState } from "react";
+import productsDataList from "../ProductList";
+
+import { useParams } from "react-router-dom";
 
 
 
-function ItemDetails(){
-    const [sellingProducts, setSellingProducts] = useState(ProductsDataList);
+function ItemDetails(props){
+const parametrosDinamicos = useParams()
+
+const foundProduct = productsDataList.find( (cadaProducto) => {
+    if(cadaProducto.title === parametrosDinamicos.title){
+        return true
+    } else {
+        return false
+    }
+})
+
+
     return(
         <>
-        {sellingProducts.map((eachProduct, indice) => {
-            return (
          <div>
-         <img src={eachProduct.images} alt=""  /> 
-            <h2>{eachProduct.title}</h2>
-            <p>{eachProduct.description}</p>
-            <p>{eachProduct.price}</p>
-            <p>{eachProduct.discountPercentage}</p>
-            <p>{eachProduct.rating}</p>
-            <p>{eachProduct.brand}</p>
-            <p>{eachProduct.warrantyInformation}</p>
-            <p>{eachProduct.reviews}</p>
-            <p>{eachProduct.returnPolicy}</p>
-            <p>{eachProduct.meta}</p>
-            <p>{eachProduct.thumbnail}</p>
+         <img src={props.foundProduct.images} alt=""  /> 
+            <h2>{props.foundProduct.title}</h2>
+            <p>{props.foundProduct.description}</p>
+            <p>{props.foundProduct.price}</p>
+            <p>{props.foundProduct.discountPercentage}</p>
+            <p>{props.foundProduct.rating}</p>
+            <p>{props.foundProduct.brand}</p>
+            <p>{props.foundProduct.warrantyInformation}</p>
+            <p>{props.foundProduct.reviews}</p>
+            <p>{props.foundProduct.returnPolicy}</p>
+            <p>{props.foundProduct.meta}</p>
+            <p>{props.foundProduct.thumbnail}</p>
 
         </div>
-        )
-
-    })}
+        
         </>
     )
 }

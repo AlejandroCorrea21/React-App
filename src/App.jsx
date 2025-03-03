@@ -7,6 +7,7 @@ import {Routes, Route} from 'react-router-dom'
 import NotFoundPage from "./pages/NotFoundPage";
 import AboutPage from "./pages/AboutPage";
 import ItemDetails from "./pages/ItemDetails";
+import Carrito from "./pages/Carrito";
 import {Link} from 'react-router-dom'
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <br />
           <Link to="/about">About</Link>
         <br />
+        <Link to="/carrito">Carrito</Link>
         
         </nav>
     
@@ -25,7 +27,9 @@ function App() {
       {/* <Navbar /> */}
        <Route path="/" element = { <ProductList /> } /> 
        <Route path="*" element = { <NotFoundPage/>} />
-       <Route path="/about" element = { <AboutPage/>} /><Route path="/details" element = { <ItemDetails/>} />
+       <Route path="/about" element = { <AboutPage/>} />
+       <Route path="/details/:product" element = { <ItemDetails/>} />
+       <Route path="/carrito" element = { <Carrito/>} />
       {/* <Sidebar />
       <Footer /> */}
 
