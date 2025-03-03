@@ -18,64 +18,55 @@ function ProductList(props) {
         const clone = sellingProducts.slice(0)
 
         clone.
-            setSellingProducts(clone)
+        setSellingProducts(clone)
 
     }
-
+ 
 
     return (
-        <>
+        <> 
 
 
             <h1 style={{ textAlign: "center", color: "black" }} >Lista de productos</h1>
-            <h1 style={{ textAlign: "center", color: "black" }} >Lista de productos</h1>
 
 
 
-            <section style={{ textAlign: "center", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-evenly", border: "solid black", marginLeft: 450, width: 1000, color: "black" }}>
-                {sellingProducts.map((eachProduct, indice) => {
-                    <section style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-evenly", border: "solid black", margin: 10, width: 1000, color: "black" }}>
+            <section style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-evenly", border: "solid black", margin: 10, width: 1000, color: "black" }}>
+                
+            {sellingProducts.map((eachProduct, indice) => {
+                    return (
+                        
+                        
+                        <div key={eachProduct.id} style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-evenly", border: "solid", margin: 20, width: 400, flexWrap: "wrap", borderRadius: "20px" }}>
 
-                        {sellingProducts.map((eachProduct, indice) => {
-                            return (
-
-                                <div key={eachProduct.id} style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-evenly", border: "solid", margin: 20, width: 400, flexWrap: "wrap", borderRadius: "20px" }}>
-                                    <img src={eachProduct.images} alt="" style={{ width: "100px", height: "100px", margin: 10, width: 100 }} />
-                                    <h2>{eachProduct.title}</h2>
-                                    <p>{eachProduct.description}</p>
-                                    <p>{eachProduct.price}</p>
-
-
-                                    <div key={eachProduct.id} style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-evenly", border: "solid", margin: 20, width: 400, flexWrap: "wrap", borderRadius: "20px" }}>
-
-                                        {/* <ItemDetails key={indice} eachProduct={eachProduct}/>
+                          {/* <ItemDetails key={indice} eachProduct={eachProduct}/>
                          */}
-                                        <img src={eachProduct.images} alt="" style={{ width: "100px", height: "100px", margin: 10, width: 100 }} />
+                              <img src={eachProduct.images} alt="" style={{ width: "100px", height: "100px", margin: 10, width: 100 }} /> 
 
-                                        <Link to={`/details/${eachProduct.title}`}><h2>{eachProduct.title}</h2></Link>
+                            <Link to={`/details/${eachProduct.title}`}><h2>{eachProduct.title}</h2></Link>
 
-                                        <p>Category: {eachProduct.category}</p>
-                                        <p>Price: {eachProduct.price}</p>
+                            <p>Category: {eachProduct.category}</p>
+                            <p>Price: {eachProduct.price}</p>
 
-                                        {eachProduct.stock > 0 ? (
-                                            <p>Stock disponible ✅ {eachProduct.stock}</p>
-                                        ) : (
-                                            <p>Producto Agotado ❌</p>
+                            {eachProduct.stock > 0 ? (
+                                <p>Stock disponible ✅ {eachProduct.stock}</p>
+                            ) : (
+                                <p>Producto Agotado ❌</p>
 
-                                        )}
-                                        <button onClick={() => handleAddProducts(indice)}>Add Cart</button>
+                            )}
+                            <button onClick={() => handleAddProducts(indice)}>Add Cart</button>
 
-                                        <br />
+                            <br />
 
-                                        <button onClick={() => handleRemoveProducts(indice)}>Delete</button>
+                            <button onClick={() => handleRemoveProducts(indice)}>Delete</button>
 
-                                        <Carrito sellingProducts={sellingProducts} setSellingProducts={setSellingProducts} />
-                                    </div>
-                                    );
+                            {/* <Carrito sellingProducts ={sellingProducts} setSellingProducts ={setSellingProducts}/> */}
+                        </div>
+                    );
                 })}
-                                </section>
+            </section>
         </>
     );
 }
 
-                export default ProductList
+export default ProductList

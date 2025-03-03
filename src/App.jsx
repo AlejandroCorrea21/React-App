@@ -1,5 +1,3 @@
-import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import ProductList from "./ProductList";
 
@@ -19,8 +17,7 @@ function App() {
           <Link to="/about">About</Link>
         <br />
         <Link to="/carrito">Carrito</Link>
-        
-        </nav>
+         </nav>
     
     <Routes>
 
