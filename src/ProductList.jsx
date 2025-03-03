@@ -17,13 +17,13 @@ function ProductList() {
         <>
 
 
-            <h1 style={{ display: "flex", alignItems: "center", color: "black" }} >Lista de productos</h1>
+            <h1 style={{ textAlign: "center", color: "black" }} >Lista de productos</h1>
 
-            <section style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-evenly", border: "solid black", margin: 10, width: 1000, color: "black" }}>
+            <section style={{ textAlign: "center", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-evenly", border: "solid black", marginLeft: 450, width: 1000, color: "black" }}>
                 {sellingProducts.map((eachProduct, indice) => {
                     return (
 
-                        <div key={eachProduct.id} style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-evenly", border: "solid", margin: 20, width: 400, flexWrap: "wrap", borderRadius: "20px" }}>
+                        <div key={eachProduct.id} style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-evenly", border: "solid", margin: 20, width: 400, flexWrap: "wrap", borderRadius: "20px" }}>
                             <img src={eachProduct.images} alt="" style={{ width: "100px", height: "100px", margin: 10, width: 100 }} />
                             <h2>{eachProduct.title}</h2>
                             <p>{eachProduct.description}</p>
