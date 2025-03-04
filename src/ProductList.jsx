@@ -5,20 +5,18 @@ import ItemDetails from "./pages/ItemDetails";
 import AddForm from "./components/AddForm";
 
 function ProductList(props) {
-    const [sellingProducts, setSellingProducts] = useState(ProductsDataList);
-
-    const [allProducts, setAllProducts] = useState()
-
+    const [allProducts, setAllProducts] = useState(ProductsDataList);
     const handleRemoveProducts = (indiceDelete) => {
-        const clone = sellingProducts.slice(0)
+
+        const clone = allProducts.slice(0)
 
         clone.splice(indiceDelete, 1)
-        setSellingProducts(clone)
+        setAllProducts(clone)
 
     }
     const handleAddProducts = (indiceAdd) => {
-        const clone = sellingProducts.slice(0)
-        clone.setSellingProducts(clone)
+        const clone = allProducts.slice(0)
+        clone.setAllProducts(clone)
 
     }
 
@@ -29,13 +27,12 @@ function ProductList(props) {
             <h1 style={{ textAlign: "center", color: "black" }} >Lista de productos</h1>
 
             <div>
-                <h2>Add Forms</h2>
                 <           AddForm allProducts={allProducts} setAllProducts={setAllProducts} />
             </div>
 
             <section style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-evenly", border: "solid black", margin: 10, width: 1000, color: "black" }}>
 
-                {sellingProducts.map((eachProduct, indice) => {
+                {allProducts.map((eachProduct, indice) => {
                     return (
 
 

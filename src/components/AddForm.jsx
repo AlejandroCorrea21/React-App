@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function AddForm(props) {
 
@@ -9,6 +9,13 @@ function AddForm(props) {
 
     const handleNameInputChange = (event) => {
         console.log(event.target.value);
+
+        /* let valorDelCampo = event.target.value
+        if (valorDelCampo === "LOL") {
+        valorDelCampo = "NO"}
+        } 
+        setNameInputValue(valorDelCampo) */
+
         setNameInputValue(event.target.value);
     };
 
@@ -30,7 +37,7 @@ function AddForm(props) {
 
         //1. Necesitamos recopilar la data a crear
         const productoParaAñadir = {
-            id: props.allProducts,
+            id: props.allProducts.length + 1, // ID único el producto
             title: nameInputValue,
             price: priceInputValue,
             stock: stockInputValue,
