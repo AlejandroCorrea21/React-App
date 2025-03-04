@@ -42,11 +42,23 @@ function ItemDetails(props) {
                 <p>Rating: {foundProduct.rating}</p>
                 <p>Brand: {foundProduct.brand}</p>
                 <p>Warranty: {foundProduct.warrantyInformation}</p>
-                <p>Rating reviews: {foundProduct.reviews.rating}</p>
-                <p>Comment: {foundProduct.reviews.comment}</p>
-                <p>Date: {foundProduct.reviews.date}</p>
-                <p>Reviewer Name: {foundProduct.reviews.reviewerName}</p>
-                <p>Reviewer Email: {foundProduct.reviews.reviewerEmail}</p>
+                {foundProduct.reviews && foundProduct.reviews.length > 0 ? (
+                    <>
+                        {/*Condicional por si no encuentra información */}
+                        <h3>Reviews:</h3>
+                        {foundProduct.reviews.map((review, index) => (
+                            <div key={index} style={{ marginBottom: "10px" }}>
+                                <p>Rating: {review.rating || "No rating available"}</p>
+                                <p>Comment: {review.comment || "No comment available"}</p>
+                                <p>Date: {new Date(review.date).toLocaleDateString() || "No date available"}</p>
+                                <p>Reviewer Name: {review.reviewerName || "No reviewer name available"}</p>
+                                <p>Reviewer Email: {review.reviewerEmail || "No reviewer email available"}</p>
+                            </div>
+                        ))}
+                    </>
+                ) : (
+                    <p>No reviews available for this product.</p>
+                )}
                 <p>Return Policy: {foundProduct.returnPolicy}</p>
                 <p>Created at: {foundProduct.meta.createdAt}</p>
                 <p>Updated at: {foundProduct.meta.updatedAt}</p>
