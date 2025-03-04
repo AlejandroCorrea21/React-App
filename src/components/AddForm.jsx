@@ -46,7 +46,7 @@ function AddForm(props) {
         console.log(productoParaAñadir);
         //2. necesitamos actualizarlo en el estado
         const clone = [...props.allProducts];
-        clone.push(productoParaAñadir);
+        clone.unshift(productoParaAñadir);
         props.setAllProducts(clone);
 
         //3. reiniciamos los campos

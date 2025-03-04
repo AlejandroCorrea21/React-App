@@ -14,10 +14,7 @@ function ItemDetails(props) {
         } else {
             return false
         }
-        // if(foundProduct === null){
-        //     return
-        // }
-        //RECORDATORIO clausula de  guardia!
+
 
     })
 
