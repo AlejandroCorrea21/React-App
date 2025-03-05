@@ -58,9 +58,9 @@ function AddForm(props) {
 
     return (
         <div className="add-form container">
-            <h2>Add Form</h2>
+            <h2>Formulario</h2>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} >
                 <div>
                     <label htmlFor="name">Name: </label>
                     <input onChange={handleNameInputChange} value={nameInputValue} type="text" name="name" required />
@@ -80,9 +80,9 @@ function AddForm(props) {
                     <label htmlFor="image">Image URL: </label>
                     <input onChange={handleImageChange} value={imageInputValue} type="text" name="image" required />
                 </div>
-
                 <button type="submit">Add</button>
             </form>
+
         </div>
     );
 }

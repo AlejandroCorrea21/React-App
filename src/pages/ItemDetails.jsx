@@ -30,7 +30,7 @@ function ItemDetails(props) {
 
     return (
         <>
-            <div style={{ color: "black" }}>
+            <div style={{ color: "black", textAlign: "center", borderRadius: " 20px" }}>
                 <img src={foundProduct.images} alt="" style={{ height: 100, width: 100 }} />
                 <h2>Product: {foundProduct.title}</h2>
                 <p>Description: {foundProduct.description}</p>

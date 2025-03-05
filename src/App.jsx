@@ -9,10 +9,13 @@ function App() {
   return (
     <>
 
-      <nav style={{ backgroundColor: "blue", height: 50, width: "100%", display: "flex", justifyContent: "space-around" }}>
-        <Link to="/">Home</Link>
+
+      <nav style={{ backgroundColor: "#57C5FA", height: 100, width: "100%", display: "flex", justifyContent: "space-around", fontSize: 25 }}>
+
+        <img src="../assets/logo.png" alt="" />
+        <Link to="/" style={{ color: "white", marginTop: 25 }}>Home</Link>
         <br />
-        <Link to="/about" style={{ color: "white" }}>About</Link>
+        <Link to="/about" style={{ color: "white", marginTop: 25 }}>About</Link>
         <br />
       </nav>
 
