@@ -1,4 +1,4 @@
-import productsDataList from "../Data/Products.json";
+
 import { useParams } from "react-router-dom";
 
 
@@ -6,15 +6,17 @@ import { useParams } from "react-router-dom";
 function ItemDetails(props) {
     const parametrosDinamicos = useParams()
     //console.log(parametrosDinamicos)
-    const foundProduct = productsDataList.find((cadaProducto) => {
-        //console.log(cadaProducto.title)
+    const foundProduct = props.allProducts.find((cadaProducto) => {
+        // el .find nos ayuda a encontrar el elemento de la condicional establecida, en este caso, en el if estamos diciendo que si el title es igual al paramdinamico de product (link), nos lo devuelve, en este caso como no existe el nuevo producto, nos retorna unfefined, ya que el nuevo producto no está en el json y el .find lo está buscando en el listado del  json
+        console.log(cadaProducto)
+        console.log(props.allProducts + "esto es allProducts")
         if (cadaProducto.title === parametrosDinamicos.product) {
-            // console.log("Has entrado en el if")
+            console.log("Has entrado en el if")
+            // en productdatalist no está lo que tenemos que buscar.
             return true
         } else {
             return false
         }
-
 
     })
 

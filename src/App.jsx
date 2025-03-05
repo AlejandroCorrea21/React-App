@@ -1,11 +1,17 @@
-import ProductList from "./ProductList";
+import ProductsDataList from "./Data/Products.json";
 import { Routes, Route } from 'react-router-dom'
 import NotFoundPage from "./pages/NotFoundPage";
 import AboutPage from "./pages/AboutPage";
 import ItemDetails from "./pages/ItemDetails";
 import { Link } from 'react-router-dom'
+import { useState } from "react";
+import ProductList from './ProductList'
+import AddForm from "./components/AddForm";
 
 function App() {
+
+  const [allProducts, setAllProducts] = useState(ProductsDataList)
+
   return (
     <>
 
@@ -22,10 +28,11 @@ function App() {
       <Routes>
 
         {/* <Navbar /> */}
-        <Route path="/" element={<ProductList />} />
+        <Route path="/" element={<ProductList allProducts={allProducts} setAllProducts={setAllProducts} />} />
         <Route path="*" element={<NotFoundPage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/details/:product" element={<ItemDetails />} />
+        <Route path="/details/:product" element={<ItemDetails allProducts={allProducts} setAllProducts={setAllProducts} />} />
+        <Route path="/add-product" element={<AddForm allProducts={allProducts} setAllProducts={setAllProducts} />} />
         {/* <Sidebar />
       <Footer /> */}
 

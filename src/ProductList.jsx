@@ -1,24 +1,22 @@
 import { useState } from "react";
-import ProductsDataList from "./Data/Products.json";
 import { Link } from "react-router-dom";
 import ItemDetails from "./pages/ItemDetails";
 import AddForm from "./components/AddForm";
 
 function ProductList(props) {
-    const [allProducts, setAllProducts] = useState(ProductsDataList);
+
     const handleRemoveProducts = (indiceDelete) => {
 
-        const clone = allProducts.slice(0)
+        const clone = props.allProducts.slice(0)
 
         clone.splice(indiceDelete, 1)
-        setAllProducts(clone)
+        props.setAllProducts(clone)
 
     }
-    const handleAddProducts = (indiceAdd) => {
-        const clone = allProducts.slice(0)
-        clone.setAllProducts(clone)
-
-    }
+    // const handleAddProducts = (indiceAdd) => {
+    //     const clone = props.allProducts.slice(0)
+    //     props.setAllProducts(clone)
+    // }
 
     return (
         <>
@@ -27,12 +25,13 @@ function ProductList(props) {
             <h1 style={{ textAlign: "center", color: "black" }} >Lista de productos</h1>
 
             <div style={{ display: "flex", flexDirection: "column", textAlign: "center", color: "black" }}>
-                <           AddForm allProducts={allProducts} setAllProducts={setAllProducts} />
+                {/* <           AddForm allProducts={allProducts} setAllProducts={setAllProducts} /> */}
+                <Link to="/add-product">Añadir producto</Link>
             </div>
 
             <section style={{ display: "flex", flexWrap: "wrap", textAlign: "center", border: "solid black", margin: "auto", width: 1300, color: "black", alignItems: "center", justifyContent: "center", borderRadius: " 20px" }}>
 
-                {allProducts.map((eachProduct, indice) => {
+                {props.allProducts.map((eachProduct, indice) => {
                     return (
 
 
