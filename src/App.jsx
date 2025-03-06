@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import { useState } from "react";
 import ProductList from './ProductList'
 import AddForm from "./components/AddForm";
+import EditForm from "./pages/EditForm";
 
 function App() {
 
@@ -34,6 +35,8 @@ function App() {
         <Route path="/details/:product" element={<ItemDetails allProducts={allProducts} setAllProducts={setAllProducts} />} />
         console.log()
         <Route path="/add-product" element={<AddForm allProducts={allProducts} setAllProducts={setAllProducts} />} />
+        <Route path="/edit/:product" element={<EditForm allProducts={allProducts} setAllProducts={setAllProducts} />} />
+
         {/* <Sidebar />
       <Footer /> */}
 

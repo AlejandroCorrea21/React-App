@@ -1,9 +1,11 @@
 
 import { useParams } from "react-router-dom";
 
-
+import { Link } from "react-router-dom";
 
 function ItemDetails(props) {
+
+
     const parametrosDinamicos = useParams()
     console.log(parametrosDinamicos.product)
     // Los parametrosdinamicos son las partes de la URL que pueden cambiar según nuestra conveniencia.
@@ -36,6 +38,8 @@ function ItemDetails(props) {
     //console.log(foundProduct.returnPolicy)
     //console.log(foundProduct.thumbnail)
     console.log(props.allProducts)
+
+
     return (
         <>
             <div style={{ color: "black", textAlign: "center", borderRadius: " 20px" }}>
@@ -74,6 +78,10 @@ function ItemDetails(props) {
 
                 <p>QR Code: <img src={foundProduct.qrCode} alt="QR Code" style={{ width: 100, height: 100 }} /></p>
                 <p>Thumbnail: <img src={foundProduct.thumbnail} alt="Thumbnail" style={{ width: 100, height: 100 }} /></p>
+
+                <Link to={`/edit/${foundProduct.id}`} style={{ color: "green", textDecoration: "none" }}>
+                    <button style={{ height: 50, width: 90, fontSize: "18px" }}>Edit</button>
+                </Link>
 
             </div>
         </>

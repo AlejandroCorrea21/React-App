@@ -59,9 +59,12 @@ function ProductList(props) {
 
                             )}
 
-                            <br />
+                            <button
+                                onClick={() => handleRemoveProducts(indice)}
+                                style={{ height: 50, width: 90, fontSize: "18px", marginBottom: "10px" }}
+                            >Delete</button>
 
-                            <button onClick={() => handleRemoveProducts(indice)} style={{ height: 50, width: 90, fontSize: "18px", }} >Delete</button>
+
 
                         </div>
                     );
