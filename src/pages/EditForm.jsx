@@ -40,31 +40,48 @@ function EditForm({ allProducts, setAllProducts }) {
     };
 
     return (
-        <div className="edit-form container">
-            <form onSubmit={handleSubmit}>
-                <h2>Editar Producto</h2>
 
-                <label>ID:</label>
-                <input type="text" name="id" value={editedProduct.id} readOnly />
+        <section style={{ display: "flex", flexDirection: "column", textAlign: "center", padding: '30px', color: "black", padding: '30px' }}>
+            <div className="edit-form container">
+                <form onSubmit={handleSubmit}>
+                    <h2>Editar Producto</h2>
 
-                <label>Nombre:</label>
-                <input type="text" name="title" value={editedProduct.title} onChange={handleAll} />
+                    <div style={{ padding: "10px" }}>
+                        <label>ID:</label>
+                        <input type="text" name="id" value={editedProduct.id} readOnly />
+                    </div>
 
-                <label>Precio:</label>
-                <input type="number" name="price" value={editedProduct.price} onChange={handleAll} />
+                    <div style={{ padding: "10px" }}>
+                        <label>Nombre:</label>
+                        <input type="text" name="title" value={editedProduct.title} onChange={handleAll} />
+                    </div>
 
-                <label>Stock:</label>
-                <input type="number" name="stock" value={editedProduct.stock} onChange={handleAll} />
+                    <div style={{ padding: "10px" }}>
+                        <label>Precio:</label>
+                        <input type="number" name="price" value={editedProduct.price} onChange={handleAll} />
+                    </div>
 
-                <label>Imagen URL:</label>
-                <input type="text" name="images" value={editedProduct.images} onChange={handleAll} />
+                    <div style={{ padding: "10px" }}>
+                        <label>Stock:</label>
+                        <input type="number" name="stock" value={editedProduct.stock} onChange={handleAll} />
+                    </div>
 
-                <div className="buttons">
-                    <button type="submit">Guardar Cambios</button>
-                    <Link to="/"><button>Volver</button></Link>
-                </div>
-            </form>
-        </div>
+                    <div style={{ padding: "10px" }}>
+                        <label>Imagen URL:</label>
+                        <input type="text" name="images" value={editedProduct.images} onChange={handleAll} />
+                    </div>
+
+
+                    <div className="buttons" style={{ padding: "10px" }}>
+                        <button type="submit">Guardar Cambios</button>
+                    </div>
+                    <div style={{ padding: "10px" }}>
+
+                        <Link to="/"><button>Volver</button></Link>
+                    </div>
+                </form>
+            </div>
+        </section>
     );
 }
 
