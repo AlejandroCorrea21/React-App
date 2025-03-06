@@ -11,7 +11,7 @@ import AddForm from "./components/AddForm";
 function App() {
 
   const [allProducts, setAllProducts] = useState(ProductsDataList)
-
+  console.log(allProducts)
   return (
     <>
 
@@ -32,6 +32,7 @@ function App() {
         <Route path="*" element={<NotFoundPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/details/:product" element={<ItemDetails allProducts={allProducts} setAllProducts={setAllProducts} />} />
+        console.log()
         <Route path="/add-product" element={<AddForm allProducts={allProducts} setAllProducts={setAllProducts} />} />
         {/* <Sidebar />
       <Footer /> */}
@@ -41,5 +42,7 @@ function App() {
   )
 }
 
+// en APP nosostros definimos los nombres de los parámetros dinámicos. EJ: ":asi se llamará"
+// En enlaces y redirecciones se interpolan los valores.
 
 export default App
