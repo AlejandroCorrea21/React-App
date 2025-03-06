@@ -44,7 +44,10 @@ function ProductList(props) {
                          */}
                             <img src={eachProduct.images} alt="" style={{ width: 300, height: 100, margin: 10, width: 100 }} />
 
-                            <Link to={`/details/${eachProduct.title}`} style={{ color: "#57C5FA" }}><h2>{eachProduct.title}</h2></Link>
+                            <Link to={`/details/${eachProduct.id}`} style={{ color: "#57C5FA" }}>
+                                <h2>{eachProduct.title}</h2>
+                            </Link>
+
 
                             <p>Category: {eachProduct.category}</p>
                             <p>Price: {eachProduct.price}</p>

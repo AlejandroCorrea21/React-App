@@ -1,6 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+
 
 function AddForm(props) {
+
+    const navigate = useNavigate()
+
 
     const [nameInputValue, setNameInputValue] = useState("");
     const [priceInputValue, setPriceInputValue] = useState(0);
@@ -41,7 +47,7 @@ function AddForm(props) {
             title: nameInputValue,
             price: priceInputValue,
             stock: stockInputValue,
-            images: imageInputValue
+            images: [imageInputValue] // las imagenes en un array.
         };
         console.log(productoParaAñadir);
         //2. necesitamos actualizarlo en el estado
@@ -54,16 +60,19 @@ function AddForm(props) {
         setPriceInputValue(0);
         setStockInputValue(0);
         setImageInputValue("");
+
+        navigate("/");
+
     };
 
     return (
-        <div className="add-form container">
-            <h2>Formulario</h2>
+        <div className="add-form container" style={{ display: "flex", flexDirection: "column", textAlign: "center", padding: '30px', color: "black" }}>
+            <h2 style={{ textAlign: 'center', padding: '30px' }}>Formulario</h2>
 
             <form onSubmit={handleSubmit} >
                 <div>
                     <label htmlFor="name">Name: </label>
-                    <input onChange={handleNameInputChange} value={nameInputValue} type="text" name="name" required />
+                    <input style={{ color: 'black', fontSize: '15px', fontStyle: 'italic' }} onChange={handleNameInputChange} value={nameInputValue} type="text" name="name" required />
                 </div>
 
                 <div>
@@ -80,7 +89,7 @@ function AddForm(props) {
                     <label htmlFor="image">Image URL: </label>
                     <input onChange={handleImageChange} value={imageInputValue} type="text" name="image" required />
                 </div>
-                <button type="submit">Add</button>
+                <button type="submit" >Add</button>
             </form>
 
         </div>

@@ -7,9 +7,10 @@ function ItemDetails(props) {
     const parametrosDinamicos = useParams()
     //console.log(parametrosDinamicos)
     const foundProduct = props.allProducts.find((cadaProducto) => {
+
         // el .find nos ayuda a encontrar el elemento de la condicional establecida, en este caso, en el if estamos diciendo que si el title es igual al paramdinamico de product (link), nos lo devuelve, en este caso como no existe el nuevo producto, nos retorna unfefined, ya que el nuevo producto no está en el json y el .find lo está buscando en el listado del  json
         console.log(cadaProducto)
-        console.log(props.allProducts + "esto es allProducts")
+        console.log(props.allProducts)
         if (cadaProducto.title === parametrosDinamicos.product) {
             console.log("Has entrado en el if")
             // en productdatalist no está lo que tenemos que buscar.
@@ -44,6 +45,8 @@ function ItemDetails(props) {
                 {foundProduct.reviews && foundProduct.reviews.length > 0 ? (
                     <>
                         {/*Condicional por si no encuentra información */}
+
+
                         <h3>Reviews:</h3>
                         {foundProduct.reviews.map((review, index) => (
                             <div key={index} style={{ marginBottom: "10px" }}>
@@ -56,6 +59,7 @@ function ItemDetails(props) {
                         ))}
                     </>
                 ) : (
+
                     <p>No reviews available for this product.</p>
                 )}
                 <p>Return Policy: {foundProduct.returnPolicy}</p>
@@ -65,6 +69,7 @@ function ItemDetails(props) {
 
                 <p>QR Code: <img src={foundProduct.meta.qrCode} alt="QR Code" style={{ width: 100, height: 100 }} /></p>
                 <p>Thumbnail: <img src={foundProduct.thumbnail} alt="Thumbnail" style={{ width: 100, height: 100 }} /></p>
+
             </div>
         </>
     );
